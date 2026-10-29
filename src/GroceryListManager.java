@@ -1,63 +1,80 @@
-import java.util.ArrayList;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class GroceryListManager {
-    private ArrayList<String> groceryList = new ArrayList<>();
+    private HashMap<String, Double> groceryList = new HashMap<>();
 
-    // adds an item to the grocery list
-    public void addItem(String item) {
-        if (!groceryList.contains(item)) {
-            groceryList.add(item);
+    // adds an item and its cost
+    public void addItem(String item, double cost) {
+        if (cost < 0) {
+            System.out.println("Cost cannot be negative.");
         } else {
-            System.out.println(item + " is already in the list.");
+            groceryList.put(item, cost);
         }
     }
 
-    // removes an item from the grocery list
+    // removes an item
     public void removeItem(String item) {
-        if (groceryList.contains(item)) {
+        if (groceryList.containsKey(item)) {
             groceryList.remove(item);
         } else {
             System.out.println(item + " is not in the list.");
         }
     }
 
-    // shows all items in the grocery list
+    // shows all items and their costs
     public void displayList() {
-        for (int i = 0; i < groceryList.size(); i++) {
-            System.out.println((i + 1) + ". " + groceryList.get(i));
+        for (Map.Entry<String, Double> entry : groceryList.entrySet()) {
+            System.out.println(entry.getKey() + ": €"
+                    + String.format("%.2f", entry.getValue()));
         }
     }
 
-    // checks if an item is in the grocery list
+    // checks if an item exists
     public boolean checkItem(String item) {
-        return groceryList.contains(item);
+        return groceryList.containsKey(item);
+    }
+
+    // calculates the total cost
+    public double calculateTotalCost() {
+        double total = 0;
+
+        for (double cost : groceryList.values()) {
+            total += cost;
+        }
+
+        return total;
     }
 
     public static void main(String[] args) {
         GroceryListManager manager = new GroceryListManager();
 
-        // add items
-        manager.addItem("Apples");
-        manager.addItem("Milk");
-        manager.addItem("Bread");
+        manager.addItem("Apples", 2.50);
+        manager.addItem("Milk", 1.80);
+        manager.addItem("Bread", 2.20);
 
-        // show the original list
         System.out.println("Grocery List:");
         manager.displayList();
 
-        // check if Milk is in the list
         System.out.println();
-        System.out.println("Is \"Milk\" in the grocery list? "
+        System.out.println("Is Milk in the grocery list? "
                 + manager.checkItem("Milk"));
 
-        // remove Milk
         System.out.println();
-        System.out.println("Removing \"Milk\" from the list...");
+        System.out.println("Total cost: €"
+                + String.format("%.2f", manager.calculateTotalCost()));
+
+        System.out.println();
+        System.out.println("Removing Milk from the list...");
         manager.removeItem("Milk");
 
-        // display the updated list
         System.out.println();
         System.out.println("Updated Grocery List:");
         manager.displayList();
+
+        System.out.println();
+        System.out.println("Updated total cost: €"
+                + String.format("%.2f", manager.calculateTotalCost()));
     }
 }
