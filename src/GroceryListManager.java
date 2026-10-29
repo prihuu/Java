@@ -130,28 +130,37 @@ public class GroceryListManager {
         }
     }
 
+
     public static void main(String[] args) {
         GroceryListManager manager = new GroceryListManager();
 
+        //add items
         manager.addItem("Apples", 2.50, "Fruits", 5);
         manager.addItem("Milk", 1.80, "Dairy", 2);
-        manager.addItem("Bread", 2.20, "Bakery", 0);
-        manager.addItem("Bananas", 1.50, "Fruits", 3);
+        manager.addItem("Bread", 2.20, "Bakery", 3);
+        manager.addItem("Bananas", 1.50, "Fruits", 4);
+        manager.addItem("Cheese", 3.40, "Dairy", 1);
 
-        System.out.println("Grocery List:");
-        manager.displayList();
+        //total cost
+        System.out.println("Total cost:");
+        System.out.println(manager.calculateTotalCost());
 
-        System.out.println();
-        manager.updateQuantity("Milk", 4);
+        //categories
+        System.out.println("\nFruits:");
+        manager.displayByCategory("Fruits");
 
-        System.out.println("After updating Milk quantity:");
-        manager.displayList();
+        //quantity update
+        System.out.println("\nUpdating Milk quantity to 5...");
+        manager.updateQuantity("Milk", 5);
 
-        System.out.println();
+        //available items
+        manager.updateQuantity("Bread", 0);
+        System.out.println("\nAvailable items:");
         manager.displayAvailableItems();
 
-        System.out.println();
-        System.out.println("Total cost: €"
-                + String.format("%.2f", manager.calculateTotalCost()));
+        //updated total cost
+        System.out.println("\nUpdated total cost:");
+        System.out.println(manager.calculateTotalCost());
     }
+
 }
