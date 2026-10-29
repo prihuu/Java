@@ -4,6 +4,11 @@ public class Car {
     private double gasolineLevel;
     private double gasolineTankCapacity;
     private String typeName;
+    private double targetSpeed;
+    private boolean cruiseControlOn;
+
+    private static final double MIN_CRUISE_SPEED = 30;
+    private static final double MAX_CRUISE_SPEED = 120;
     public double getGasolineTankCapacity() {
         return gasolineTankCapacity;
     }
@@ -52,4 +57,44 @@ public class Car {
     double getGasolineLevel() {
         return gasolineLevel;
     }
+
+    public void setTargetSpeed(double targetSpeed) {
+        if (targetSpeed >= MIN_CRUISE_SPEED
+                && targetSpeed <= MAX_CRUISE_SPEED) {
+            this.targetSpeed = targetSpeed;
+        }
+    }
+
+    public double getTargetSpeed() {
+        return targetSpeed;
+    }
+
+    public boolean turnOnCruiseControl() {
+        if (gasolineLevel <= 0
+                || targetSpeed < MIN_CRUISE_SPEED
+                || targetSpeed > MAX_CRUISE_SPEED) {
+            cruiseControlOn = false;
+            return false;
+        }
+
+        while (speed < targetSpeed) {
+            speed = Math.min(speed + 10, targetSpeed);
+        }
+
+        while (speed > targetSpeed) {
+            speed = Math.max(speed - 10, targetSpeed);
+        }
+
+        cruiseControlOn = true;
+        return true;
+    }
+
+    public void turnOffCruiseControl() {
+        cruiseControlOn = false;
+    }
+
+    public boolean isCruiseControlOn() {
+        return cruiseControlOn;
+    }
+
 }
