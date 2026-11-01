@@ -13,4 +13,10 @@ public class Triangle2 extends Shape {
     public double calculateArea() {
         return (base * height) / 2;
     }
+
+    @Override
+    public String toString() {
+        return "Triangle with base " + base
+                + " and height " + height;
+    }
 }

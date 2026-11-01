@@ -11,4 +11,9 @@ public class Circle extends Shape {
     public double calculateArea() {
         return Math.PI * radius * radius;
     }
+
+    @Override
+    public String toString() {
+        return "Circle with radius " + radius;
+    }
 }

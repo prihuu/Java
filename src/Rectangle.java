@@ -13,5 +13,11 @@ public class Rectangle extends Shape {
     public double calculateArea() {
         return width * height;
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle with width " + width
+                + " and height " + height;
+    }
 }
 
