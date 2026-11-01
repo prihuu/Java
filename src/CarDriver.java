@@ -40,6 +40,7 @@ public class CarDriver {
         System.out.println("Cruise control is off");
 
 
+
         //test sports car
         System.out.println("\nTesting sports car:");
 
@@ -61,5 +62,27 @@ public class CarDriver {
 
         System.out.println("Sports car speed after deceleration: "
                 + mySportsCar.getSpeed() + " km/h");
+
+
+        //test bus
+        System.out.println("\nTesting bus:");
+
+        Bus myBus = new Bus("Volvo Bus", 3);
+        myBus.fillTank();
+
+        myBus.passengerEnter();
+        myBus.passengerEnter();
+        myBus.passengerEnter();
+
+        myBus.displayPassengers();
+
+        //try to enter when the bus is full
+        myBus.passengerEnter();
+
+        //one passenger exits
+        myBus.passengerExit();
+
+        myBus.displayPassengers();
+
     }
 }
