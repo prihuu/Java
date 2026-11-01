@@ -1,23 +1,26 @@
+
 public class CarDriver {
     public static void main(String[] args) {
+
+        //test ordinary car
         Car myCar = new Car("Toyota Corolla");
         myCar.fillTank();
 
-        // test normal acceleration
+        //test normal acceleration
         for (int i = 0; i < 6; i++) {
             myCar.accelerate();
             System.out.println(myCar.getTypeName()
                     + ": speed is " + myCar.getSpeed() + " km/h");
         }
 
-        // test normal deceleration
+        //test normal deceleration
         while (myCar.getSpeed() > 0) {
             myCar.decelerate(15);
             System.out.println(myCar.getTypeName()
                     + ": speed is " + myCar.getSpeed() + " km/h");
         }
 
-        // test cruise control sectionn
+        //test cruise control
         System.out.println("\nTesting cruise control:");
 
         myCar.accelerate();
@@ -35,5 +38,28 @@ public class CarDriver {
 
         myCar.turnOffCruiseControl();
         System.out.println("Cruise control is off");
+
+
+        //test sports car
+        System.out.println("\nTesting sports car:");
+
+        SportsCar mySportsCar = new SportsCar("Ferrari");
+        mySportsCar.fillTank();
+
+        System.out.println("Initial gasoline: "
+                + mySportsCar.getGasolineLevel());
+
+        mySportsCar.accelerate();
+
+        System.out.println("Sports car speed: "
+                + mySportsCar.getSpeed() + " km/h");
+
+        System.out.println("Gasoline after acceleration: "
+                + mySportsCar.getGasolineLevel());
+
+        mySportsCar.decelerate(10);
+
+        System.out.println("Sports car speed after deceleration: "
+                + mySportsCar.getSpeed() + " km/h");
     }
 }

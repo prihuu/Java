@@ -97,4 +97,10 @@ public class Car {
         return cruiseControlOn;
     }
 
+
+    public void useGasoline(double amount) {
+        gasolineLevel = Math.max(0, gasolineLevel - amount);
+    }
+
+
 }
