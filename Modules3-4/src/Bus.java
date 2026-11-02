@@ -1,4 +1,10 @@
-public class Bus implements Vehicle {
+public class Bus extends AbstractVehicle {
+    private int capacity;
+
+    public Bus() {
+        super("Bus", "Diesel", "Yellow", 2022);
+        capacity = 40;
+    }
 
     @Override
     public void start() {
@@ -13,8 +19,10 @@ public class Bus implements Vehicle {
     @Override
     public String getInfo() {
         return "Bus Information:\n"
-                + "Type: Bus\n"
-                + "Fuel: Diesel\n"
-                + "Capacity: 40 passengers";
+                + "Type: " + getType() + "\n"
+                + "Fuel: " + getFuel() + "\n"
+                + "Color: " + getColor() + "\n"
+                + "Year: " + getYear() + "\n"
+                + "Capacity: " + capacity + "passengers";
     }
 }

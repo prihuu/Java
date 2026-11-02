@@ -1,4 +1,9 @@
-public class Car implements Vehicle {
+public class Car extends AbstractVehicle {
+
+    public Car() {
+        super("Car", "Petrol", "Red", 2024);
+    }
+
     @Override
     public void start() {
         System.out.println("Car is starting...");
@@ -12,8 +17,9 @@ public class Car implements Vehicle {
     @Override
     public String getInfo() {
         return "Car Information:\n"
-                + "Type: Car\n"
-                + "Fuel: Petrol\n"
-                + "Color: Red";
+                + "Type: " + getType() + "\n"
+                + "Fuel: " + getFuel() + "\n"
+                + "Color: " + getColor() + "\n"
+                + "Year: " + getYear();
     }
 }
