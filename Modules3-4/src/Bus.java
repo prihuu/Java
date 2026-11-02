@@ -2,7 +2,7 @@ public class Bus extends AbstractVehicle {
     private int capacity;
 
     public Bus() {
-        super("Bus", "Diesel", "Yellow", 2022);
+        super("Bus", "Diesel", "Yellow", 2022, 6.0, "MPG");
         capacity = 40;
     }
 
@@ -23,6 +23,8 @@ public class Bus extends AbstractVehicle {
                 + "Fuel: " + getFuel() + "\n"
                 + "Color: " + getColor() + "\n"
                 + "Year: " + getYear() + "\n"
-                + "Capacity: " + capacity + "passengers";
+                + "Capacity: " + capacity + "passengers"
+                + "\nFuel efficiency: " + calculateFuelEfficiency()
+                + " " + getEfficiencyUnit();
     }
 }

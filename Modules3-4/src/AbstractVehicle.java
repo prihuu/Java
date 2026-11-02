@@ -5,13 +5,20 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     private String color;
     private int year;
 
+    private double fuelEfficiency;
+    private String efficiencyUnit;
+
     public AbstractVehicle(String type, String fuel,
-                           String color, int year) {
+                           String color, int year,
+                           double fuelEfficiency,
+                           String efficiencyUnit) {
 
         this.type = type;
         this.fuel = fuel;
         this.color = color;
         this.year = year;
+        this.fuelEfficiency = fuelEfficiency;
+        this.efficiencyUnit = efficiencyUnit;
     }
 
     public String getType() {
@@ -28,6 +35,15 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
 
     public int getYear() {
         return year;
+    }
+
+    public String getEfficiencyUnit() {
+        return efficiencyUnit;
+    }
+
+    @Override
+    public double calculateFuelEfficiency() {
+        return fuelEfficiency;
     }
 
     public void displayBasicInfo() {

@@ -1,7 +1,7 @@
 public class Car extends AbstractVehicle {
 
     public Car() {
-        super("Car", "Petrol", "Red", 2024);
+        super("Car", "Petrol", "Red", 2024, 30.0, "MPG");
     }
 
     @Override
@@ -20,6 +20,8 @@ public class Car extends AbstractVehicle {
                 + "Type: " + getType() + "\n"
                 + "Fuel: " + getFuel() + "\n"
                 + "Color: " + getColor() + "\n"
-                + "Year: " + getYear();
+                + "Year: " + getYear()
+                + "\nFuel efficiency: " + calculateFuelEfficiency()
+                + " " + getEfficiencyUnit();
     }
 }

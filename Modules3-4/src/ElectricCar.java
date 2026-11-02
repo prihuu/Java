@@ -1,7 +1,7 @@
 public class ElectricCar extends AbstractVehicle {
 
     public ElectricCar() {
-        super("Electric Car", "Electricity", "White", 2025);
+        super("Electric Car", "Electricity", "White", 2025, 0.18, "kWh/km");
     }
 
     @Override
@@ -20,7 +20,9 @@ public class ElectricCar extends AbstractVehicle {
                 + "Type: " + getType() + "\n"
                 + "Fuel: " + getFuel() + "\n"
                 + "Color: " + getColor() + "\n"
-                + "Year: " + getYear();
+                + "Year: " + getYear()
+                + "\nEnergy efficiency: " + calculateFuelEfficiency()
+                + " " + getEfficiencyUnit();
     }
 
     @Override

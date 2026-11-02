@@ -1,7 +1,7 @@
 public class Motorcycle extends AbstractVehicle {
 
     public Motorcycle() {
-        super("Motorcycle", "Gasoline", "Black", 2023);
+        super("Motorcycle", "Gasoline", "Black", 2023, 55.0, "MPG");
     }
     @Override
     public void start() {
@@ -19,6 +19,8 @@ public class Motorcycle extends AbstractVehicle {
                 + "Type: " + getType() + "\n"
                 + "Fuel: " + getFuel() + "\n"
                 + "Color: " + getColor() + "\n"
-                + "Year: " + getYear();
+                + "Year: " + getYear()
+                + "\nFuel efficiency: " + calculateFuelEfficiency()
+                + " " + getEfficiencyUnit();
     }
 }
