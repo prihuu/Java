@@ -1,4 +1,5 @@
 public class VehicleDemo {
+
     public static void main(String[] args) {
 
         System.out.println("Vehicle Demonstration\n");
@@ -6,7 +7,9 @@ public class VehicleDemo {
         AbstractVehicle[] vehicles = {
                 new Car(),
                 new Motorcycle(),
-                new Bus()
+                new Bus(),
+                new ElectricCar(),
+                new ElectricMotorcycle()
         };
 
         for (AbstractVehicle vehicle : vehicles) {
@@ -15,6 +18,9 @@ public class VehicleDemo {
             vehicle.stop();
 
             System.out.println(vehicle.getInfo());
+
+            vehicle.charge();
+
             System.out.println();
         }
     }
