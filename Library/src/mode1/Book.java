@@ -5,12 +5,14 @@ public class Book {
     private String author;
     private String isbn;
     private boolean available;
+    private boolean reserved;
 
     public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
         available = true;
+        reserved = false;
     }
 
     public String getTitle() {
@@ -31,5 +33,13 @@ public class Book {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

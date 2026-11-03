@@ -6,11 +6,13 @@ public class LibraryMember {
     private String name;
     private int memberId;
     private ArrayList<Book> borrowedBooks;
+    private ArrayList<Book> reservedBooks;
 
     public LibraryMember(String name, int memberId) {
         this.name = name;
         this.memberId = memberId;
         borrowedBooks = new ArrayList<>();
+        reservedBooks = new ArrayList<>();
     }
 
     public String getName() {
@@ -31,5 +33,21 @@ public class LibraryMember {
 
     public void returnBook(Book book) {
         borrowedBooks.remove(book);
+    }
+
+    public void addReservedBook(Book book) {
+        reservedBooks.add(book);
+    }
+
+    public void removeReservedBook(Book book) {
+        reservedBooks.remove(book);
+    }
+
+    public boolean hasReservedBook(Book book) {
+        return reservedBooks.contains(book);
+    }
+
+    public ArrayList<Book> getReservedBooks() {
+        return reservedBooks;
     }
 }
