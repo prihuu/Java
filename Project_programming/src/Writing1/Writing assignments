@@ -1,0 +1,30 @@
+1. Everyday situations where simulation can be used
+- A simulation can be useful at a supermarket checkout system.
+It can be used to analyse how many checkout counters should be
+open at different times of the day and how long customers have
+to wait in queues.
+
+- Simulation in particular is suitable because the number of
+customers varies throughout the day. For example, supermarkets
+are usually busier in the afternoon and during weekends.
+It would be difficult to experiment with different
+checkout arrangements in a real supermarket because it could
+cause long queues and inconvenience customers. With simulation,
+different situations can be tested safely without disturbing
+the actual supermarket.
+
+- Another example is public transportation. Simulation can analyse
+bus schedules, passenger numbers and traffic conditions. It can help
+determine how many buses are needed and how delays affect passengers.
+
+- Simulation is also sustainable because we can test different
+solutions before implementing them in real life.
+That saves time and resources and can help organisations make more
+sustainable decisions.
+
+2. Analysis of a supermarket
+- A supermarket is a suitable example of a system to analyse
+using simulation because customer numbers, waiting times and available
+resources constantly change. Simulation can help understand how
+these elements affect each other and how the supermarket can improve its
+operations.
