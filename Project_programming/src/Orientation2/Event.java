@@ -1,6 +1,6 @@
 
 
-public class Event implements Comparable<Event> {
+public class Event implements Comparable<Event3> {
 
     private double eventTime;
     private EventType eventType;
@@ -19,7 +19,7 @@ public class Event implements Comparable<Event> {
     }
 
     @Override
-    public int compareTo(Event other) {
+    public int compareTo(Event3 other) {
         return Double.compare(this.eventTime, other.eventTime);
     }
 

@@ -1,0 +1,42 @@
+Task1
+- To generate 1000 ages using the distribution method we first
+calculate the probability of each age in in the student group.
+Then we calculate the probabilities by adding each
+probability to the previous ones. The cumulative probabilities
+create intervals between 0 and 1.
+We then compare the random number with the cumulative probabilities
+and select the age corresponding to the interval in which the random
+number falls.
+By repeating this process 1000 times we generate a sample of
+ages that follows approximately the same age distribution as the original
+student group.
+
+Task3
+- A Singleton object cannot be created from outside its class
+using the "new" keyword because its constructor is declared as
+private. A private constructor can only be accessed from inside
+the class itself.
+The class provides a public static method usually called "getInstance()",
+which creates the object if it does not already exist and returns
+the existing instance if it does.
+For example, a simulation program can use a Singleton Clock so that all parts
+of the program use the same simulation time.
+
+Task 4
+- Normal distribution: Used to describe human heights,
+measurement errors and exam scores. Most of the values are
+close to the average while very high and very low values are less common.
+
+- Uniform distribution: Used when all possible outcomes have
+an equal probability. For example, generating a random number
+between 1 and 10.
+
+- Exponential distribution: Used to describe waiting times between
+events such as the time between incoming customer calls.
+
+- Poisson distribution: Used to describe the number of events
+occurring during a fixed period of time, such as the number of customers arriving at a store in one hour.
+
+- Binomial distribution: Used to calculate the number of successes
+in a fixed number of attempts such as the number of correct answers
+in a quiz.
