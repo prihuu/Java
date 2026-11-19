@@ -1,0 +1,41 @@
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f4f7fb;
+}
+
+#title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #176b5b;
+}
+
+.label {
+    -fx-text-fill: #333333;
+}
+
+.text-field {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 38px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+.combo-box {
+    -fx-pref-width: 160px;
+    -fx-pref-height: 38px;
+}
+
+.button {
+    -fx-background-color: #176b5b;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #105044;
+}
