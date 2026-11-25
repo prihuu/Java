@@ -11,7 +11,7 @@ public class NotebookApp extends Application {
     public void start(Stage stage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(
-                NotebookApp.class.getResource("/com/example/notebook/notebook-view.fxml")
+                NotebookApp.class.getResource("/notebook/notebook-view.fxml")
         );
 
         Scene scene = new Scene(loader.load(), 600, 700);
